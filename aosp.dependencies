@@ -14,5 +14,11 @@
     "target_path": "packages/resources/devicesettings",
     "branch": "lineage-15.1",
     "remote": "github"
+  },
+  {
+    "repository" : "kenny3fcb/gcc-prebuilts",
+    "target_path": "prebuilts/gcc/linux-x86/aarch64/aarch64-linaro-7.2/",
+    "branch"     : "7.2.1",
+    "remote": "github"
   }
 ]
