@@ -28,8 +28,9 @@
     -->
     <integer name="config_fingerprintSensorLocation">1</integer>
 
-    <!-- does the device have multi color led support or only
-         a fixed set of led colors -->
-    <bool name="config_has_multi_color_led">false</bool>
+    <!-- Device specific doze package -->
+    <string name="config_customDozePackage">org.lineageos.settings.doze/org.lineageos.settings.doze.DozeSettingsActivity</string>
+     <!-- Whether dual band ap is supported -->
+    <bool name="is_dual_band_ap_supported">false</bool>
 
 </resources>
