@@ -99,7 +99,6 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libaudioroute \
     libbthost_if \
-    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
