@@ -144,10 +144,6 @@ PRODUCT_PACKAGES += \
     init.wlan.sh \
     ueventd.qcom.rc
 
-# ConfigPanel
-PRODUCT_PACKAGES += \
-    ConfigPanel
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
