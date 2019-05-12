@@ -28,11 +28,18 @@ public class Constants {
     public static final String CATEGORY_FP = "fp_key";
 
     // Preference keys
+    public static final String BUTTON_SWAP_KEY = "button_swap";
+    public static final String FP_HOME_KEY = "fp_home";
     public static final String FP_POCKETMODE_KEY = "fp_pocketmode";
     public static final String FP_WAKEUP_KEY = "fp_wakeup";
 
     // Nodes
-    public static final String FP_WAKEUP_NODE = "/sys/devices/soc/soc:fpc1020/enable_wakeup";
+    public static final String CYTTSP_BUTTON_SWAP_NODE = "/proc/buttons/reversed_keys_enable";
+    public static final String FP_HOME_KEY_NODE = "/sys/devices/soc/soc:fpc_fpc1020/enable_key_events";
+    public static final String FP_WAKEUP_NODE = "/sys/devices/soc/soc:fpc_fpc1020/enable_wakeup";
+    public static final String TOUCHPANEL_BUTTON_SWAP_NODE = "/proc/touchpanel/reversed_keys_enable";
+    public static final String VIRTUAL_KEYS_NODE = "/proc/touchpanel/capacitive_keys_enable";
+
     // Intents
     public static final String CUST_INTENT = "org.lineageos.settings.device.CUST_UPDATE";
     public static final String CUST_INTENT_EXTRA = "pocketmode_service";
@@ -51,12 +58,24 @@ public class Constants {
     public static final Map<String, String[]> sNodeDependencyMap = new HashMap<>();
 
     public static final String[] sButtonPrefKeys = {
+        BUTTON_SWAP_KEY,
+        FP_HOME_KEY,
         FP_WAKEUP_KEY
     };
 
     static {
+        if (FileUtils.fileExists(Constants.CYTTSP_BUTTON_SWAP_NODE)) {
+            sBooleanNodePreferenceMap.put(BUTTON_SWAP_KEY, CYTTSP_BUTTON_SWAP_NODE);
+        } else if (FileUtils.fileExists(Constants.TOUCHPANEL_BUTTON_SWAP_NODE)) {
+            sBooleanNodePreferenceMap.put(BUTTON_SWAP_KEY, TOUCHPANEL_BUTTON_SWAP_NODE);
+        }
+        sBooleanNodePreferenceMap.put(FP_HOME_KEY, FP_HOME_KEY_NODE);
         sBooleanNodePreferenceMap.put(FP_WAKEUP_KEY, FP_WAKEUP_NODE);
 
+        sNodeDefaultMap.put(BUTTON_SWAP_KEY, false);
+        sNodeDefaultMap.put(FP_HOME_KEY, false);
         sNodeDefaultMap.put(FP_WAKEUP_KEY, true);
+
+        sNodeDependencyMap.put(FP_HOME_KEY, new String[]{ VIRTUAL_KEYS_NODE, "1" });
     }
 }

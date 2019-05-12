@@ -56,6 +56,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".KeyHandler" />
+
         <receiver android:name=".Startup" >
             <intent-filter>
                 <action android:name="lineageos.intent.action.INITIALIZE_LINEAGE_HARDWARE" />
