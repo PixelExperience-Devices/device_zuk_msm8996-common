@@ -145,8 +145,8 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # ConfigPanel
-PRODUCT_PACKAGES += \
-    ConfigPanel
+#PRODUCT_PACKAGES += \
+#    ConfigPanel
 
 # Display
 PRODUCT_PACKAGES += \
