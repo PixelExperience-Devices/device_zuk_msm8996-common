@@ -1,0 +1,20 @@
+[
+ {
+    "remote":      "github",
+    "repository": "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "branch":      "lineage-17.0"
+ },
+ {
+    "remote":      "github",
+    "repository":  "Rodrigo594/proprietary_vendor_zuk",
+    "target_path": "vendor/zuk",
+    "branch":      "ten"  
+  },
+  {
+    "remote":      "github",
+    "repository":  "Rodrigo594/kernel_zuk_msm8996",
+    "target_path": "kernel/zuk/msm8996",
+    "branch":      "ten"
+  }
+]
